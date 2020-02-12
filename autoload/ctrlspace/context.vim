@@ -110,7 +110,7 @@ function! s:detectEngine()
 
     if has("win32")
         let os   = "windows"
-        let arch = empty(system('set | find "ProgramFiles(x86)"')) ? "386" : "amd64"
+        let arch = empty(system('ls C:\ | Select-String "ProgramFiles(x86)"')) ? "386" : "amd64"
     else
         let uname = system("uname -a")
 
